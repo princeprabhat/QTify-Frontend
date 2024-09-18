@@ -1,0 +1,15 @@
+.custom_button {
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  cursor: pointer;
+  width: 170px;
+  height: 47px;
+  padding: 10px, 16px, 10px, 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  text-align: center;
+}

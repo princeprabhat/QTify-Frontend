@@ -1,11 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+
+import Navbar from "./components/Navbar/Navbar";
+
+import Hero from "./components/Hero/Hero";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <h1>Qtify</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Hero />
+      </div>
+    </BrowserRouter>
   );
 }
 
