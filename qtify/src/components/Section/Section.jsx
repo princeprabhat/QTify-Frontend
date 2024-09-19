@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import styles from "./Section.module.css";
+import Button from "../Button/Button";
 
 const Section = ({ title, onToggle, btnText = "Show all" }) => {
   return (
@@ -21,9 +21,10 @@ const Section = ({ title, onToggle, btnText = "Show all" }) => {
       >
         {title}
       </Typography>
-      <button className={styles.toggle_btn} onClick={onToggle}>
+
+      <Button onClick={onToggle} variant="text">
         {btnText}
-      </button>
+      </Button>
     </Box>
   );
 };

@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, variant }) => {
+  const btnVariant = variant === "text" ? "text" : "contained";
+
   return (
     <>
-      <button className={styles.custom_btn} onClick={onClick}>
+      <button className={styles[btnVariant]} onClick={onClick}>
         {children}
       </button>
     </>

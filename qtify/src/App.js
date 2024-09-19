@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 
 import Albums from "./components/Albums/Albums";
+// import Carousel from "./components/Carousel/Carousel";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Hero />
 
         <Albums />
+
       </div>
     </BrowserRouter>
   );
