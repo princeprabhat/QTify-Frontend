@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import styles from "./Section.module.css";
 
-const Section = ({ title }) => {
+const Section = ({ title, onToggle, btnText = "Show all" }) => {
   return (
     <Box
       display="flex"
@@ -21,7 +21,9 @@ const Section = ({ title }) => {
       >
         {title}
       </Typography>
-      <button className={styles.toggle_btn}>Collapse</button>
+      <button className={styles.toggle_btn} onClick={onToggle}>
+        {btnText}
+      </button>
     </Box>
   );
 };
