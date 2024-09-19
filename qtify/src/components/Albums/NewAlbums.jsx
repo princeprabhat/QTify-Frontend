@@ -15,10 +15,10 @@ const NewAlbums = ({ newAlbumData, title }) => {
         marginBottom="30px"
       >
         {newAlbumData.length > 0 &&
-          newAlbumData.map((item) => {
+          newAlbumData.map((data) => {
             return (
-              <Grid2 item key={item.id}>
-                <Cards data={item} />
+              <Grid2 item key={data.id}>
+                <Cards data={data} />
               </Grid2>
             );
           })}
