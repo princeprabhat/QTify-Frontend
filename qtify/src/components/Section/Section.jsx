@@ -14,7 +14,7 @@ const Section = ({ title }) => {
           color: "#ffffff",
         }}
       >
-        Top Albums
+        {title}
       </Typography>
       <button className={styles.toggle_btn}>Collapse</button>
     </Box>

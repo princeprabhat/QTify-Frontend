@@ -6,14 +6,14 @@ import { Box, Grid } from "@mui/system";
 import Cards from "../Cards/Cards";
 import styles from "./TopAlbums.module.css";
 
-const TopAlbums = () => {
+const NewAlbums = () => {
   const [albumData, setAlbumData] = useState([]);
 
   useEffect(() => {
     const fetchAlbum = async () => {
       try {
         const { data } = await axios.get(
-          "https://qtify-backend-labs.crio.do/albums/top"
+          "https://qtify-backend-labs.crio.do/albums/new"
         );
 
         setAlbumData(data);
@@ -26,7 +26,7 @@ const TopAlbums = () => {
 
   return (
     <Box className={styles.card_container}>
-      <Section title="Top Albums" />
+      <Section title="New Albums" />
       <Grid container justifyContent="flex-start" spacing={4}>
         {albumData.length > 0 &&
           albumData.map((item) => {
@@ -41,4 +41,4 @@ const TopAlbums = () => {
   );
 };
 
-export default TopAlbums;
+export default NewAlbums;
