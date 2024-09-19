@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Divider from "@mui/material/Divider";
-import TopAlbums from "./TopAlbums";
-import NewAlbums from "./NewAlbums";
+
+import NewAlbum from "./NewAlbum";
 
 const Albums = () => {
   const [topAlbumData, setTopAlbumData] = useState([]);
@@ -41,9 +41,9 @@ const Albums = () => {
 
   return (
     <div>
-      <TopAlbums title="Top Albums" topAlbumData={topAlbumData} />
+      <NewAlbum title="Top Albums" albumData={topAlbumData} />
       <Divider component="div" sx={dividerStyle} />
-      <NewAlbums title="New Albums" newAlbumData={newAlbumData} />
+      <NewAlbum title="New Albums" albumData={newAlbumData} />
       <Divider component="div" sx={dividerStyle} />
     </div>
   );

@@ -4,7 +4,7 @@ import Cards from "../Cards/Cards";
 import Section from "../Section/Section";
 import styles from "./Albums.module.css";
 
-const NewAlbums = ({ newAlbumData, title }) => {
+const NewAlbum = ({ albumData, title }) => {
   return (
     <Box className={styles.card_container}>
       <Section title={title} />
@@ -14,8 +14,8 @@ const NewAlbums = ({ newAlbumData, title }) => {
         spacing={4}
         marginBottom="30px"
       >
-        {newAlbumData.length > 0 &&
-          newAlbumData.map((data) => {
+        {albumData.length > 0 &&
+          albumData.map((data) => {
             return (
               <Grid2 item key={data.id}>
                 <Cards data={data} />
@@ -27,4 +27,4 @@ const NewAlbums = ({ newAlbumData, title }) => {
   );
 };
 
-export default NewAlbums;
+export default NewAlbum;
