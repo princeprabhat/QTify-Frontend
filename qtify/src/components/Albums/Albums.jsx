@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Divider from "@mui/material/Divider";
+import TopAlbums from "./TopAlbums";
+import NewAlbums from "./NewAlbums";
 
-import Section from "../Section/Section";
-import { Box, Grid } from "@mui/system";
-import Cards from "../Cards/Cards";
-import styles from "./Albums.module.css";
-
-const TopAlbums = () => {
+const Albums = () => {
   const [topAlbumData, setTopAlbumData] = useState([]);
   const [newAlbumData, setNewAlbumData] = useState([]);
 
@@ -19,9 +17,13 @@ const TopAlbums = () => {
         ]);
         if (topAlbum.status === "fulfilled") {
           setTopAlbumData(topAlbum.value.data);
+        } else {
+          console.error("Cannot fetch top albums");
         }
         if (newAlbum.status === "fulfilled") {
           setNewAlbumData(newAlbum.value.data);
+        } else {
+          console.error("Cannot fetch new albums");
         }
       } catch (error) {
         console.error("Something went wrong...Please try after sometime");
@@ -30,43 +32,21 @@ const TopAlbums = () => {
     fetchAlbum();
   }, []);
 
-  return (
-    <Box className={styles.card_container}>
-      <Section title="Top Albums" />
-      <Grid
-        container
-        justifyContent="flex-start"
-        spacing={4}
-        marginBottom="30px"
-      >
-        {topAlbumData.length > 0 &&
-          topAlbumData.map((item) => {
-            return (
-              <Grid item key={item.id}>
-                <Cards data={item} />
-              </Grid>
-            );
-          })}
-      </Grid>
+  const dividerStyle = {
+    width: "100%",
+    border: "1px solid",
+    borderColor: "divider",
+    backgroundColor: "#34c94b",
+  };
 
-      <Section title="New Albums" />
-      <Grid
-        container
-        justifyContent="flex-start"
-        spacing={4}
-        marginBottom="30px"
-      >
-        {newAlbumData.length > 0 &&
-          newAlbumData.map((item) => {
-            return (
-              <Grid item key={item.id}>
-                <Cards data={item} />
-              </Grid>
-            );
-          })}
-      </Grid>
-    </Box>
+  return (
+    <div>
+      <TopAlbums title="Top Albums" topAlbumData={topAlbumData} />
+      <Divider component="div" sx={dividerStyle} />
+      <NewAlbums title="New Albums" newAlbumData={newAlbumData} />
+      <Divider component="div" sx={dividerStyle} />
+    </div>
   );
 };
 
-export default TopAlbums;
+export default Albums;
