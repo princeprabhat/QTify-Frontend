@@ -6,8 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 import Hero from "./components/Hero/Hero";
 
-import TopAlbums from "./components/Albums/TopAlbums";
-import NewAlbums from "./components/Albums/NewAlbums";
+import Albums from "./components/Albums/Albums";
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
         <Navbar />
         <Hero />
 
-        <TopAlbums />
-        <NewAlbums />
+        <Albums />
       </div>
     </BrowserRouter>
   );

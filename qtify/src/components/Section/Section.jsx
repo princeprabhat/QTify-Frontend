@@ -4,7 +4,12 @@ import styles from "./Section.module.css";
 
 const Section = ({ title }) => {
   return (
-    <Box display="flex" justifyContent="space-between" marginY="20px">
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      marginY="20px"
+    >
       <Typography
         variant="body1"
         sx={{
