@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 const Button = ({ children, onClick }) => {
   return (
     <>
-      <button className={styles.custom_button} onClick={onClick}>
+      <button className={styles.custom_btn} onClick={onClick}>
         {children}
       </button>
     </>

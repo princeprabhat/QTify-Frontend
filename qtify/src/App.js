@@ -6,14 +6,16 @@ import Navbar from "./components/Navbar/Navbar";
 
 import Hero from "./components/Hero/Hero";
 
+import TopAlbums from "./components/Albums/TopAlbums";
 
 function App() {
-
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar />
         <Hero />
+
+        <TopAlbums />
       </div>
     </BrowserRouter>
   );
