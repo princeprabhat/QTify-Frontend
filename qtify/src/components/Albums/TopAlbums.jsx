@@ -15,9 +15,11 @@ const TopAlbums = () => {
         const { data } = await axios.get(
           "https://qtify-backend-labs.crio.do/albums/top"
         );
-        console.log(data);
+
         setAlbumData(data);
-      } catch (error) {}
+      } catch (error) {
+        return;
+      }
     };
     fetchAlbum();
   }, []);
