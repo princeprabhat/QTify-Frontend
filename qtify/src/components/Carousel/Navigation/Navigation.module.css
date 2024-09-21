@@ -1,0 +1,14 @@
+.left_button {
+  position: absolute;
+  z-index: 1;
+  top: 33%;
+  left: 0px;
+  cursor: pointer;
+}
+.right_button {
+  position: absolute;
+  z-index: 1;
+  top: 33%;
+  right: 0px;
+  cursor: pointer;
+}
