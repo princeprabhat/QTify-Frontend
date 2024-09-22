@@ -8,6 +8,12 @@ import Chip from "@mui/material/Chip";
 // import styles from "./Cards.module.css";
 
 const Cards = ({ data }) => {
+  let chipLabel = "";
+  if (data.follows) {
+    chipLabel = `${data.follows} Follows`;
+  } else if (data.likes) {
+    chipLabel = `${data.likes} Likes`;
+  }
   return (
     <Card
       sx={{
@@ -37,7 +43,7 @@ const Cards = ({ data }) => {
           }}
         >
           <Chip
-            label={data?.follows + " Follows"}
+            label={chipLabel}
             // className={styles.card_chip}
             sx={{
               fontSize: "10px",

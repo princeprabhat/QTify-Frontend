@@ -9,7 +9,6 @@ const Navigation = () => {
   const swiper = useSwiper();
   const [isFirst, setIsFirst] = useState(true);
   const [isLast, setIsLast] = useState(false);
-  console.log("isLast", isLast);
 
   useEffect(() => {
     swiper.on("slideChange", function () {
@@ -20,8 +19,18 @@ const Navigation = () => {
 
   return (
     <div>
-      {!isFirst && <LeftIcon className={styles.left_button} onClick={() => swiper.slidePrev()} />}
-      {!isLast && <RightIcon className={styles.right_button} onClick={() => swiper.slideNext()} />}
+      {!isFirst && (
+        <LeftIcon
+          className={styles.left_button}
+          onClick={() => swiper.slidePrev()}
+        />
+      )}
+      {!isLast && (
+        <RightIcon
+          className={styles.right_button}
+          onClick={() => swiper.slideNext()}
+        />
+      )}
     </div>
   );
 };

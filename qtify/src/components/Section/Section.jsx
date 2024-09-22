@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import Button from "../Button/Button";
 
-const Section = ({ title, onToggle, btnText = "Show all" }) => {
+const Section = ({ title, onToggle, btnText = "Show all", hasBtn = true }) => {
   return (
     <Box
       display="flex"
@@ -22,9 +22,11 @@ const Section = ({ title, onToggle, btnText = "Show all" }) => {
         {title}
       </Typography>
 
-      <Button onClick={onToggle} variant="text">
-        {btnText}
-      </Button>
+      {hasBtn && (
+        <Button onClick={onToggle} variant="text">
+          {btnText}
+        </Button>
+      )}
     </Box>
   );
 };
