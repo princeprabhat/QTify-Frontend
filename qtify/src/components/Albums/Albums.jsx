@@ -14,12 +14,13 @@ const Albums = () => {
   useEffect(() => {
     const fetchAlbum = async () => {
       try {
-        const [topAlbum, newAlbum, allSong,allGenre] = await Promise.allSettled([
-          axios.get("https://qtify-backend-labs.crio.do/albums/top"),
-          axios.get("https://qtify-backend-labs.crio.do/albums/new"),
-          axios.get("https://qtify-backend-labs.crio.do/songs"),
-          axios.get("https://qtify-backend-labs.crio.do/genres"),
-        ]);
+        const [topAlbum, newAlbum, allSong, allGenre] =
+          await Promise.allSettled([
+            axios.get("https://qtify-backend-labs.crio.do/albums/top"),
+            axios.get("https://qtify-backend-labs.crio.do/albums/new"),
+            axios.get("https://qtify-backend-labs.crio.do/songs"),
+            axios.get("https://qtify-backend-labs.crio.do/genres"),
+          ]);
         if (topAlbum.status === "fulfilled") {
           setTopAlbumData(topAlbum.value.data);
         } else {
@@ -60,7 +61,8 @@ const Albums = () => {
       <Divider component="div" sx={dividerStyle} />
       <NewAlbum title="New Albums" albumData={newAlbumData} />
       <Divider component="div" sx={dividerStyle} />
-      <Songs songsData={allSongs} title="Songs" allGenre={allGenres}/>
+      <Songs songsData={allSongs} title="Songs" allGenre={allGenres} />
+      <Divider component="div" sx={dividerStyle} />
     </div>
   );
 };

@@ -4,8 +4,13 @@ import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 import styles from "./Navbar.module.css";
+import { useData } from "../../DataContext";
 
-function Navbar({ searchData }) {
+function Navbar() {
+  const { data } = useData();
+  const searchData = [...data.topAlbumData, ...data.newAlbumData];
+  // console.log("data here is::", data);
+  // console.log("searchData", searchData);
   return (
     <nav className={styles.navbar}>
       <Link to="/">

@@ -24,6 +24,7 @@ const Listbox = styled("ul")(({ theme }) => ({
   right: 0,
   listStyle: "none",
   backgroundColor: "var(--color-black)",
+  color: "white",
   overflow: "auto",
   "& li.Mui-focused": {
     backgroundColor: "#4a8df6",
@@ -53,9 +54,9 @@ function Search({ searchData, placeholder }) {
 
   const navigate = useNavigate();
   const onSubmit = (e, value) => {
-    e.preventDefault();
-    console.log(value);
-    navigate(`/album/${value.slug}`);
+    // e.preventDefault();
+    console.log(value.slug);
+    navigate(`/album/${value?.slug}`);
     //Process form data, call API, set state etc.
   };
 

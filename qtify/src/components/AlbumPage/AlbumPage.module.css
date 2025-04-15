@@ -1,0 +1,42 @@
+.btn_shuffle {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 131px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  line-height: 21.6px;
+  cursor: pointer;
+}
+.btn_library {
+  background-color: var(--color-black);
+  color: var(--color-primary);
+  cursor: pointer;
+  width: 207px;
+  height: 47px;
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.song_heading {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.song_heading span:nth-child(2) {
+  margin-left: 80px;
+}

@@ -13,7 +13,7 @@ const Songs = ({ songsData, title, allGenre }) => {
 
   const handleValue = (event, newValue) => {
     setValue(newValue);
-    console.log(event);
+    // console.log(event);
   };
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Songs = ({ songsData, title, allGenre }) => {
       const filteredSongs = songsData.filter(
         (song) => song?.genre?.label === value
       );
-      console.log(filteredSongs);
+      // console.log(filteredSongs);
       setSongList(filteredSongs);
     }
   }, [value, songsData]);
@@ -44,7 +44,7 @@ const Songs = ({ songsData, title, allGenre }) => {
         <Tabs
           value={value}
           onChange={handleValue}
-          textColor="#fff"
+          textColor="#ffffff"
           aria-label="Genres Tab"
           sx={{
             "& .MuiTabs-indicator": {

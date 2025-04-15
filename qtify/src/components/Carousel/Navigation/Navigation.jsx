@@ -11,10 +11,15 @@ const Navigation = () => {
   const [isLast, setIsLast] = useState(false);
 
   useEffect(() => {
-    swiper.on("slideChange", function () {
+    const handleSlideChange = function () {
       setIsLast(swiper.isEnd);
       setIsFirst(swiper.isBeginning);
-    });
+    };
+    swiper.on("slideChange", handleSlideChange);
+
+    return () => {
+      swiper.off("slideChange", handleSlideChange);
+    };
   }, [swiper]);
 
   return (
